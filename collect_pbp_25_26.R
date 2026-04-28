@@ -1127,7 +1127,7 @@ completed_games <- schedule_25_26 %>% filter(home_score+away_score>0)
 games_to_scrape <- setdiff(completed_games$game_id,unique(pbp$game_id))
 
 if(length(games_to_scrape)>0){
-  for(i in 1:5){
+  for(i in 1:length(games_to_scrape)){
     skip_to_next <- FALSE
     print(i)
     game <- games_to_scrape[i]
@@ -1139,7 +1139,7 @@ if(length(games_to_scrape)>0){
   games_to_scrape <- setdiff(completed_games$game_id,unique(pbp$game_id))
   
   if(length(games_to_scrape)>0){
-    for(i in 1:5){
+    for(i in 1:length(games_to_scrape)){
       skip_to_next <- FALSE
       print(i)
       game <- games_to_scrape[i]
