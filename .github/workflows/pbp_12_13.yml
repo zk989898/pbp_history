@@ -1,0 +1,44 @@
+name: PBP_12_13
+
+on:
+  # Allow manual trigger
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  
+jobs:
+  import-data:
+    runs-on: ubuntu-latest
+      
+    steps:
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+
+      - name: Install packages
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            any::tidyverse
+            any::glue
+            any::jsonlite
+            any::rvest
+            any::reshape2
+            any::data.table
+            any::zoo
+            
+      - name: Check out repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Import data
+        run: Rscript -e 'source("collect_pbp_12_13.R")'
+        
+      - name: Commit Results
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add data/pbp_12_13.rds
+          git commit -m 'Data updated' || echo "No changes to commit"
+          git push origin || echo "No changes to commit"
