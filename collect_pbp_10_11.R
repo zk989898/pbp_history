@@ -7,9 +7,9 @@ library(rvest)
 library(reshape2)
 library(zoo)
 
-team_abbr <- c("ANA","ARI","ATL","BOS","BUF","CGY","CAR","CHI","COL","CBJ","DAL","DET","EDM","FLA","LAK","MIN","MTL","NSH","NJD","NYI","NYR","OTT","PHI","PIT","SJS","SEA","STL","TBL","TOR","UTA","UTA","VAN","VGK","WSH","WPG")
-team_names <- c("Anaheim Ducks","Arizona Coyotes","Atlanta Thrashers","Boston Bruins","Buffalo Sabres","Calgary Flames","Carolina Hurricanes","Chicago Blackhawks","Colorado Avalanche","Columbus Blue Jackets","Dallas Stars","Detroit Red Wings","Edmonton Oilers","Florida Panthers","Los Angeles Kings","Minnesota Wild","Montreal Canadiens","Nashville Predators","New Jersey Devils","New York Islanders","New York Rangers","Ottawa Senators","Philadelphia Flyers","Pittsburgh Penguins","San Jose Sharks","Seattle Kraken","St. Louis Blues","Tampa Bay Lightning","Toronto Maple Leafs","Utah Hockey Club","Utah Mammoth","Vancouver Canucks","Vegas Golden Knights","Washington Capitals","Winnipeg Jets")
-teamId <- c(24,53,11,6,7,20,12,16,21,29,25,17,22,13,26,30,8,18,1,2,3,9,4,5,28,55,19,14,10,59,68,23,54,15,52)
+team_abbr <- c("ANA","ARI","ATL","BOS","BUF","CGY","CAR","CHI","COL","CBJ","DAL","DET","EDM","FLA","LAK","MIN","MTL","NSH","NJD","NYI","NYR","OTT","PHI","PHX","PIT","SJS","SEA","STL","TBL","TOR","UTA","UTA","VAN","VGK","WSH","WPG")
+team_names <- c("Anaheim Ducks","Arizona Coyotes","Atlanta Thrashers","Boston Bruins","Buffalo Sabres","Calgary Flames","Carolina Hurricanes","Chicago Blackhawks","Colorado Avalanche","Columbus Blue Jackets","Dallas Stars","Detroit Red Wings","Edmonton Oilers","Florida Panthers","Los Angeles Kings","Minnesota Wild","Montreal Canadiens","Nashville Predators","New Jersey Devils","New York Islanders","New York Rangers","Ottawa Senators","Philadelphia Flyers","Phoenix Coyotes","Pittsburgh Penguins","San Jose Sharks","Seattle Kraken","St. Louis Blues","Tampa Bay Lightning","Toronto Maple Leafs","Utah Hockey Club","Utah Mammoth","Vancouver Canucks","Vegas Golden Knights","Washington Capitals","Winnipeg Jets")
+teamId <- c(24,53,11,6,7,20,12,16,21,29,25,17,22,13,26,30,8,18,1,2,3,9,4,27,5,28,55,19,14,10,59,68,23,54,15,52)
 team_table <- data.frame(team_abbr,team_names,teamId)
 
 
